@@ -6,7 +6,7 @@ const fs = require("fs");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-const port = 3000;
+var port = process.env.PORT || 3000;
 var maxId = 0;
 
 app.get("/api/notes", (req, res) => {
